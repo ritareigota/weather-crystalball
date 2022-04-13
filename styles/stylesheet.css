@@ -151,12 +151,12 @@ form {
     text-align: center;
     color: #c06c84;
     margin-top: 10px;
-    font-size: smaller;
+    font-size: 12px;
 }
-.instagram {
+.links {
     text-decoration: none;
     color: #c06c84;
 }   
-.instagram:hover {
+.links:hover {
     color:#60316e;
 }
