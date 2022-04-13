@@ -21,29 +21,27 @@ function realMinutes () {
     }
 }
 
+function showWeather (response) {
+    let degrees = document.querySelector(".degrees-value");
+    degrees.innerHTML = Math.round(response.data.main.temp);
+    let windSeepd = document.querySelector(".wind-speed");
+    windSeepd.innerHTML = response.data.wind.speed.toFixed(1);
+    let humidity = document.querySelector(".humidity");
+    humidity.innerHTML = response.data.main.humidity;
+    let description = document.querySelector(".weather-container");
+    description.innerHTML = response.data.weather[0].description;
+    let cityName = document.querySelector(".city-container");
+    cityName.innerHTML = response.data.name;
+    }
+
 function changeCity (event) {
     event.preventDefault();
     let cityInput = document.querySelector(".city-form");
-    let city = document.querySelector(".city-container");
-    city.innerHTML = cityInput.value.trim();
-
-    function showTemperature (response) {
-        let degrees = document.querySelector(".degrees-value");
-        degrees.innerHTML = Math.round(response.data.main.temp);
-        let windSeepd = document.querySelector(".wind-speed");
-        windSeepd.innerHTML = response.data.wind.speed.toFixed(1);
-        let humidity = document.querySelector(".humidity");
-        humidity.innerHTML = response.data.main.humidity;
-        let description = document.querySelector(".weather-container");
-        description.innerHTML = response.data.weather[0].description;
-        let cityName = document.querySelector(".city-container");
-        cityName.innerHTML = response.data.name;
-    }
 
     let apiKey = "1e7e5bb02603e6a4966c4d7f735bd85f";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.innerHTML}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value.trim()}&appid=${apiKey}&units=metric`;
 
-    axios.get(apiUrl).then(showTemperature);
+    axios.get(apiUrl).then(showWeather);
 }
 function getCurrentCity (event) {
     event.preventDefault();
@@ -52,19 +50,7 @@ function getCurrentCity (event) {
     function showPosition (position) {
         let lat = position.coords.latitude;
         let long = position.coords.longitude;
-    
-        function showWeather (response) {
-        let degrees = document.querySelector(".degrees-value");
-        degrees.innerHTML = Math.round(response.data.main.temp);
-        let windSeepd = document.querySelector(".wind-speed");
-        windSeepd.innerHTML = response.data.wind.speed.toFixed(1);
-        let humidity = document.querySelector(".humidity");
-        humidity.innerHTML = response.data.main.humidity;
-        let description = document.querySelector(".weather-container");
-        description.innerHTML = response.data.weather[0].description;
-        let cityName = document.querySelector(".city-container");
-        cityName.innerHTML = response.data.name;
-        }
+
 
         let apiKey = "1e7e5bb02603e6a4966c4d7f735bd85f";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
@@ -101,6 +87,12 @@ let cityForm = document.querySelector(".city-search")
 cityForm.addEventListener("submit", changeCity)
 
 highlightCelsius (); 
+
+
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=aveiro&appid=1e7e5bb02603e6a4966c4d7f735bd85f&units=metric`
+
+axios.get(apiUrl).then(showWeather);
+
 
 let currentCity = document.querySelector(".current-city-button");
 currentCity.addEventListener("click", getCurrentCity); 
