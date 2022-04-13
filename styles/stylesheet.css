@@ -1,0 +1,162 @@
+body{
+    font-family: 'Nunito', sans-serif;
+	background: #fdffcd;
+}
+.container {
+    border: 2px solid #60316e;
+    border-radius: 5px;
+}
+.row.first-row {
+    margin: 50px 10px;
+    text-align: center;
+    color: #fdffcd;
+}
+.card{
+    background: #f8b595;
+}
+.city-container {
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #60316e;
+    font-family: 'Concert One', cursive;
+}
+.date-time {
+    font-weight: 600;
+}
+.above-text {
+    font-size: 10px;
+    position: relative;
+    bottom: 5px;
+    left: 1px;
+}
+.temperature-container {
+    font-weight: 900;
+    font-size: 50px;
+    font-family: 'Concert One', cursive;
+    color: #c06c84;
+}
+.degrees {
+    font-weight: 900;
+    font-size: 40px;
+    font-family: 'Concert One', cursive;
+    color: #c06c84;
+}
+a.celsius , a.fahrenheit {
+    text-decoration: none;
+    color: #c06c84;
+    font-weight: 600;
+}
+.celsius:hover, .fahrenheit:hover {
+    color: #60316e;
+    font-weight: 900;
+}
+.celsius.highlight, .fahrenheit.highlight {
+    color: #60316e;
+    font-weight: 900;   
+}
+.weather-container {
+    font-weight: 600;
+}
+.col-6.weather {
+    margin: 0 auto;
+}
+form {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10.5px;
+}
+.city-form {
+    width: 80%;
+    background: #fdffcd; 
+    border-radius: 3px;
+    border: 2px solid #c06c84;
+}
+.submit {
+    color: #c06c84;
+    transition: all 200ms ease-in-out;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #ffebbb;
+    border-color: #ffebbb;
+    border-radius: 5px;
+    width: 19%;
+    font-family: 'Concert One', cursive;
+}
+.submit:hover{
+    background-color: #c06c84;
+    border: #c06c84;
+    color: #ffebbb;
+    font-weight: 900;
+}
+.card-text {
+    font-weight: 600;
+    width: auto;
+    max-width: 18rem;
+    margin: auto;
+}
+#lottie {
+    width: 182px;
+    display: block;
+    margin: 0 auto;
+}
+.row.second-row {
+    text-align: center;
+}
+.day-name {
+    font-family: 'Concert One', cursive;
+    color: #60316e;
+    font-size: 150%;
+    font-weight: 600;
+}
+.day-temp {
+    color: #c06c84;
+    font-weight: 600;
+}
+.current-city-button {
+    display: block;
+    margin: 20px auto;
+    color: #c06c84;
+    transition: all 200ms ease-in-out;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #ffebbb;
+    border-color: #ffebbb;
+    border-radius: 5px;
+    width: 50%;
+    font-family: 'Concert One', cursive;
+}
+.current-city-button:hover {
+    background-color: #c06c84;
+    border-color: #c06c84;
+    color: #ffebbb;
+}
+.row.third-row {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 13px;
+    padding: 20px;
+}
+.city-name {
+    text-decoration: none;
+    color: #a2a2a1;
+}   
+.city-name:hover {
+    color:#60316e;
+    font-weight: 700;
+}
+.footer {
+    font-family: 'Concert One', cursive;
+    text-align: center;
+    color: #c06c84;
+    margin-top: 10px;
+    font-size: smaller;
+}
+.instagram {
+    text-decoration: none;
+    color: #c06c84;
+}   
+.instagram:hover {
+    color:#60316e;
+}
