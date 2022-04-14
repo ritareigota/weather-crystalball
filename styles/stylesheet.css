@@ -2,9 +2,10 @@ body{
     font-family: 'Nunito', sans-serif;
 	background: #fdffcd;
 }
-.container {
+.weather-app {
     border: 2px solid #60316e;
     border-radius: 5px;
+    margin-top: 20px;
 }
 .row.first-row {
     margin: 50px 10px;
@@ -58,6 +59,7 @@ a.celsius , a.fahrenheit {
 }
 .weather-container {
     font-weight: 600;
+    text-transform: capitalize;
 }
 .col-6.weather {
     margin: 0 auto;
