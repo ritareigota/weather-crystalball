@@ -37,14 +37,17 @@ function showWeather (response) {
     icon.setAttribute("alt", response.data.weather[0].main);
     }
 
+function search (city){
+        let apiKey = "1e7e5bb02603e6a4966c4d7f735bd85f";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    
+        axios.get(apiUrl).then(showWeather);
+    }
 function changeCity (event) {
     event.preventDefault();
     let cityInput = document.querySelector(".city-form");
+    search(cityInput.value.trim());
 
-    let apiKey = "1e7e5bb02603e6a4966c4d7f735bd85f";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value.trim()}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(showWeather);
 }
 function getCurrentCity (event) {
     event.preventDefault();
@@ -91,11 +94,7 @@ cityForm.addEventListener("submit", changeCity)
 
 highlightCelsius (); 
 
-
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=aveiro&appid=1e7e5bb02603e6a4966c4d7f735bd85f&units=metric`
-
-axios.get(apiUrl).then(showWeather);
-
+search ("aveiro");
 
 let currentCity = document.querySelector(".current-city-button");
 currentCity.addEventListener("click", getCurrentCity); 
