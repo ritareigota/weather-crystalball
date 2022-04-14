@@ -92,16 +92,14 @@ form {
     color: #ffebbb;
     font-weight: 900;
 }
+.card-right {
+    height: 264.5px;
+}
 .card-text {
     font-weight: 600;
     width: auto;
     max-width: 18rem;
     margin: auto;
-}
-#lottie {
-    width: 182px;
-    display: block;
-    margin: 0 auto;
 }
 .row.second-row {
     text-align: center;
