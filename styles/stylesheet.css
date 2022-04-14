@@ -113,6 +113,10 @@ form {
 .day-temp {
     color: #c06c84;
     font-weight: 600;
+    font-size: 15px;
+}
+.min-temp {
+    color: #d393a5;
 }
 .current-city-button {
     display: block;
