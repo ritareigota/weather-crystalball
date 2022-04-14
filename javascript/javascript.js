@@ -33,7 +33,8 @@ function showWeather (response) {
     let cityName = document.querySelector(".city-container");
     cityName.innerHTML = response.data.name;
     let icon = document.querySelector(".icon");
-    icon.setAttribute("src", `images/${response.data.weather[0].icon}.html`)
+    icon.setAttribute("src", `images/${response.data.weather[0].icon}.html`);
+    icon.setAttribute("alt", response.data.weather[0].main);
     }
 
 function changeCity (event) {
