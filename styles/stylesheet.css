@@ -115,7 +115,7 @@ div.card-body {
 }
 .current-city-button {
     display: block;
-    margin: 20px auto;
+    margin: 30px auto;
     color: #c06c84;
     transition: all 200ms ease-in-out;
     font-weight: 500;
@@ -130,20 +130,6 @@ div.card-body {
     background-color: #c06c84;
     border-color: #c06c84;
     color: #ffebbb;
-}
-.row.third-row {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 13px;
-    padding: 20px;
-}
-.city-name {
-    text-decoration: none;
-    color: #a2a2a1;
-}   
-.city-name:hover {
-    color:#60316e;
-    font-weight: 700;
 }
 .footer {
     font-family: 'Concert One', cursive;

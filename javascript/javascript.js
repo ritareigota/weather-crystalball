@@ -109,14 +109,7 @@ function displayForecast (response) {
 function search (city){
         let apiKey = "1e7e5bb02603e6a4966c4d7f735bd85f";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    
         axios.get(apiUrl).then(showWeather);
-}
-
-function displaySuggestion (event) {
-    event.preventDefault();
-    let city = document.querySelector(".city-name");
-    search(city.value);
 }
 
 function changeCity (event) {
@@ -149,8 +142,6 @@ cityForm.addEventListener("submit", changeCity);
 let currentCity = document.querySelector(".current-city-button");
 currentCity.addEventListener("click", getCurrentCity); 
 
-let citySuggestion = document.querySelector(".city-name");
-citySuggestion.addEventListener("click", displaySuggestion);
 
 search ("aveiro");
 
