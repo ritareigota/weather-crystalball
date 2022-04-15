@@ -66,6 +66,30 @@ function showWeather (response) {
     icon.setAttribute("alt", response.data.weather[0].main);
 }
 
+function displayForecast () {
+    let forecastElement = document.querySelector(".forecast");
+
+    let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+
+    let forecastHTML = `<div class="row second-row">`;
+    days.forEach(function (day) {
+        forecastHTML = forecastHTML + 
+        `
+            <div class="col first"> 
+                <p class="day-name">${day}</p>
+                <p class="day-temp">
+                    <span class="max-temp">23º  </span><span class="min-temp">13º </span><i class="fa-solid fa-cloud"></i>
+                </p>
+            </div>
+        `;
+    })
+
+
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
 function search (city){
         let apiKey = "1e7e5bb02603e6a4966c4d7f735bd85f";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -140,3 +164,5 @@ search ("aveiro");
 formatDate (currentDate);
 
 highlightCelsius (); 
+
+displayForecast ();
