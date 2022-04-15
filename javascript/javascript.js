@@ -64,9 +64,19 @@ function showWeather (response) {
     let icon = document.querySelector(".icon");
     icon.setAttribute("src", `images/${response.data.weather[0].icon}.html`);
     icon.setAttribute("alt", response.data.weather[0].main);
+
+    getForecast (response.data.coord);
 }
 
-function displayForecast () {
+function getForecast (coordinates) {
+    let apiKey = "1e7e5bb02603e6a4966c4d7f735bd85f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=currently,minutely,hourly,alerts&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast (response) {
+    console.log(response.data.daily);
     let forecastElement = document.querySelector(".forecast");
 
     let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
@@ -83,9 +93,6 @@ function displayForecast () {
             </div>
         `;
     })
-
-
-
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
@@ -164,5 +171,3 @@ search ("aveiro");
 formatDate (currentDate);
 
 highlightCelsius (); 
-
-displayForecast ();
