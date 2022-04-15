@@ -10,6 +10,7 @@ function aboveText (day) {
     }  
     return "th";
 }
+
 function formatDate (currentDate) {
     let currentWeekDay = currentDate.getDay();
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
