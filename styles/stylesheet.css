@@ -44,19 +44,11 @@ body{
     font-family: 'Concert One', cursive;
     color: #c06c84;
 }
-a.celsius , a.fahrenheit {
+a.celsius {
     text-decoration: none;
     color: #c06c84;
     font-weight: 600;
     }
-.celsius:hover, .fahrenheit:hover {
-    color: #60316e;
-    font-weight: 900;
-}
-.celsius.highlight, .fahrenheit.highlight {
-    color: #60316e;
-    font-weight: 900;   
-}
 .weather-container {
     font-weight: 600;
     text-transform: capitalize;

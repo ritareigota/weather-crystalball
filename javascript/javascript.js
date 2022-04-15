@@ -113,6 +113,12 @@ function search (city){
         axios.get(apiUrl).then(showWeather);
 }
 
+function displaySuggestion (event) {
+    event.preventDefault();
+    let city = document.querySelector(".city-name");
+    search(city.value);
+}
+
 function changeCity (event) {
     event.preventDefault();
     let cityInput = document.querySelector(".city-form");
@@ -134,49 +140,19 @@ function getCurrentCity (event) {
     }           
 }   
 
-function changeToCelsius (event) {
-    event.preventDefault();
-    let degreesCelsius = document.querySelector(".degrees-value");
-    degreesCelsius.innerHTML = Math.round(celsiusTemperature);
-    highlightCelsius ();    
-}
-
-function changeToFahrenheit (event) {
-    event.preventDefault();
-    let degreesFahrenheit = document.querySelector(".degrees-value");
-    degreesFahrenheit.innerHTML = Math.round(celsiusTemperature*1.8+32); 
-    highlightFahrenheit ();
-}   
-
-function highlightCelsius () {
-    document.querySelector(".celsius").classList.add("highlight");
-    document.querySelector(".fahrenheit").classList.remove("highlight");
-}
-
-function highlightFahrenheit () {
-    document.querySelector(".fahrenheit").classList.add("highlight");
-    document.querySelector(".celsius").classList.remove("highlight");
-}
-
 
 let currentDate = new Date();
 
-let cityForm = document.querySelector(".city-search")
-cityForm.addEventListener("submit", changeCity)
+let cityForm = document.querySelector(".city-search");
+cityForm.addEventListener("submit", changeCity);
 
 let currentCity = document.querySelector(".current-city-button");
 currentCity.addEventListener("click", getCurrentCity); 
 
-let showCelsius = document.querySelector(".celsius");
-showCelsius.addEventListener("click", changeToCelsius);
-
-let showFahrenheit = document.querySelector(".fahrenheit");
-showFahrenheit.addEventListener("click", changeToFahrenheit);
-
-let celsiusTemperature = null;
+let citySuggestion = document.querySelector(".city-name");
+citySuggestion.addEventListener("click", displaySuggestion);
 
 search ("aveiro");
 
 formatDate (currentDate);
 
-highlightCelsius (); 
